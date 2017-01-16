@@ -1,0 +1,9 @@
+CREATE DATABASE market;
+use market;
+CREATE TABLE users(id INT PRIMARY KEY AUTO_INCREMENT, username VARCHAR(20) UNIQUE, 
+	password VARCHAR(255), admin VARCHAR(10));
+CREATE TABLE product(id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255) UNIQUE);
+CREATE TABLE category(id INT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(255) UNIQUE);
+CREATE TABLE products_categories(product_id INT, category_id INT);
+CREATE TABLE posts(id INT PRIMARY KEY AUTO_INCREMENT, user_id INT, title VARCHAR(30), content TEXT, createAt DATETIME, 
+	imageName VARCHAR(40), imagePath VARCHAR(40));

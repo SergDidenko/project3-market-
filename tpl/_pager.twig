@@ -1,0 +1,14 @@
+<link rel="stylesheet" type="text/css" href="../../css/file.css">
+<ul class="pagination">
+	{% if page > 1 %}
+		<li><a href="/1{% if name is not empty %}/{{ name }}{% endif %}">&laquo;</a></li>
+		<li><a href="/{{ page - 1 }}{% if name is not empty %}/{{ name }}{% endif %}">&lsaquo;</a></li>
+	{% endif %}
+	{% for link in links %}
+		<li><a href="/{{ link }}{% if name is not empty %}/{{ name }}{% endif %}">{{ link }}</a></li>
+	{% endfor %}
+	{% if page < maxpage %}
+		<li><a href="/{{ page + 1 }}{% if name is not empty %}/{{ name }}{% endif %}">&rsaquo;</a></li>
+		<li><a href="/{{ maxpage }}{% if name is not empty %}/{{ name }}{% endif %}">&raquo;</a></li>
+	{% endif %}
+</ul>

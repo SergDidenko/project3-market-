@@ -1,0 +1,29 @@
+Post:
+  type: entity
+  table: posts
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    title:
+      type: string
+      length: 30
+    content:
+      type: text
+    createAt:
+      type: datetime
+    imageName:
+      type: string
+      length: 40
+    imagePath:
+      type: string
+      length: 40
+  manyToOne:
+    user:
+      targetEntity: User
+      inverserBy: posts
+  lifecycleCallbacks:
+    prePersist: [ setInitialCreateAt ]
+    preUpdate: [ setInitialCreateAt ]

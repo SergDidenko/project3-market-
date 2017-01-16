@@ -1,0 +1,17 @@
+Product:
+  type: entity
+  table: product
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    name:
+      type: string
+  manyToMany:
+    categories:
+      targetEntity: Category
+      inversedBy: products
+      joinTable:
+        name: products_categories

@@ -1,0 +1,35 @@
+{% extends '_template.twig' %}
+{% block content %}
+	<div class="content">
+	    <div class="content-left">
+	    	<div class="list-group">
+	    		{% for category in categories %}
+					<a href="/1/{{ category.name }}" class="list-group-item">{{ category.name }}
+				<span>
+				{% if admin == "root" %}
+				<a href="/category/update/{{ category.id }}" type="button" class="btn btn-sm btn-primary">Update</a>
+	    		<a href="/category/delete/{{ category.id }}" type="button" class="btn btn-sm btn-danger">Delete</a>
+	    		{% endif %}
+	    		</span>
+	    		</a>
+	    		{% endfor %}
+			</div>
+	    </div>
+		
+	    <div class="content-right">
+			{% for product in products %}
+	    	<div class="panel panel-primary">
+	    		<div class="panel-heading">
+	    			<h3 class="panel-title">{{ product.name }}</h3>
+	    		</div>
+	    		{% if admin == "root" %}
+	    		<div class="panel-body">
+	    			<a href="/product/update/{{ product.id }}" type="button" class="btn btn-sm btn-primary">Update</a>
+	    			<a href="/product/delete/{{ product.id }}" type="button" class="btn btn-sm btn-danger">Delete</a>
+	    		</div>
+	    		{% endif %}
+	    	</div>
+	    	{% endfor %}
+	    </div>
+    </div>
+{% endblock %}

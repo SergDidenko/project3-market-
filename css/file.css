@@ -1,0 +1,42 @@
+.content-left{
+    float:left;
+    width:230px;
+}
+.content-right{
+	float:right;
+    width: 870px;
+}
+.content{
+	clear:both;
+}
+ul{
+	list-style-type: none;
+}
+a{
+	text-decoration: none;
+}
+.content-left-list__item{
+    color: #800000;
+    padding:10px;
+    margin-bottom: 10px;
+    background: #808080;
+}
+.content-left-list__item:hover{
+    color: #006400;
+    padding:10px;
+    margin-bottom: 10px;
+    background: #808080;
+}
+.post-image{
+    float:left;
+    
+}
+.post-content{
+    text-indent:20px;
+}
+.pagination-post{
+	margin-left: 100px;
+}
+.pagination{
+	margin-left: 375px;
+}

@@ -1,0 +1,16 @@
+Category:
+  type: entity
+  table: Category
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    name:
+      type: string
+      unique: true
+  manyToMany:
+    products:
+      targetEntity: Product
+      mappedBy: categories

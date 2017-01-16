@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title"><a href="/post/{{ page }}/separate/{{ post.id }}">{{ post.title }}</a> | {{ post.createAt.date|date('Y-m-d H:i:s') }} | {{ post.user.username|capitalize }}</h3>
+	</div>
+	<div class="panel-body">
+		<div class="post-image"><img src="{{ '\\' ~ post.imagePath }}" width="200" height="200"></div>
+		<div class="post-content">{{ post.content }}</div>
+		{% if user == post.user.username %}
+			<hr>
+			<a href="/post/{{ page }}/update/{{ post.id }}" type="button" class="btn btn-sm btn-primary">Update</a>
+			<a href="/post/{{ page }}/delete/{{ post.id }}" type="button" class="btn btn-sm btn-danger">Delete</a>
+		{% endif %}
+	</div>
+</div>

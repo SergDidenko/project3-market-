@@ -1,0 +1,23 @@
+User:
+  type: entity
+  table: users
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    username:
+      type: string
+      length: 20
+      unique: true
+    password:
+      type: string
+    admin:
+      type: string
+      length: 10
+  oneToMany:
+    posts:
+      targetEntity: Post
+      mappedBy: user
+      orphanRemoval: true

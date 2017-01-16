@@ -1,0 +1,16 @@
+{
+    "require": {
+        "symfony/var-dumper": "^3.2",
+        "doctrine/orm": "^2.5",
+        "twig/twig": "^1.30",
+        "symfony/http-foundation": "^3.2",
+        "symfony/validator": "^3.2",
+        "symfony/routing": "^3.2",
+        "symfony/yaml": "^3.2"
+    },
+    "autoload": {
+    	"psr-4": {
+    		"": "model"
+    	}
+    }
+}
